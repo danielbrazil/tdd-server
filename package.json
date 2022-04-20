@@ -1,0 +1,34 @@
+{
+  "name": "tdd-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "testold": "echo \"Error: no test specified\" && exit 1",
+    "testold2": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/mocha-setup.js",
+    "test:watch": "cross-env NODE_ENV=test npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/mocha-setup.js --watch",
+    "test": "cross-env NODE_ENV=test npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/mocha-setup.js",
+    "coverage": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text npm run test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/register": "^7.17.7",
+    "chai": "^4.3.6",
+    "chai-exclude": "^2.1.0",
+    "cross-env": "^7.0.3",
+    "mocha": "^9.2.2",
+    "nyc": "^15.1.0",
+    "regenerator-runtime": "^0.13.9",
+    "sinon": "^13.0.2",
+    "supertest": "^6.2.2"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "lodash": "^4.17.21",
+    "mongodb": "^4.5.0"
+  }
+}
